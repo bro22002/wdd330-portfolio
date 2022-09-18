@@ -4,8 +4,9 @@
     box-sizing: border-box;
 }
 
-header, main {
-    margin: 0 auto;
+header,
+main {
+    margin: .5rem auto;
     padding: 1rem;
     max-width: 1300px;
 }
