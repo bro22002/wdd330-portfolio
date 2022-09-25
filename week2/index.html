@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <title>WDD 330 | week 2 notes</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>WDD 330 Portfolio</h1>
+    </header>
+    <main>
+      <h2>Week 02</h2>
+      <ul>
+        <li>
+          <article>
+            <h3>Variables</h3>
+            <p>
+              in programming are used to refer to values stored in the computer
+              memory. In the JavaScript ES6 version, there are two ways to
+              declare variables. Variables must be declared before they can be
+              used in our code. To declare a variable, you can use
+              <code>const</code> and the <code>let</code> keywords. The
+              difference between the <code>const</code> and the
+              <code>let</code> is, the <code>const</code> keyword is used when
+              the value of the variable is not reassigned or changed while the
+              <code>let</code> keyword is used when the value of the variable is
+              reassigned later in the program. Below are examples of declaring
+              variables using <code>let</code> and <code>const</code>.<br />
+              <code>const name = “Brown”</code><br />
+              <code>let number = 0</code>
+            </p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3>Scope</h3>
+            <p>
+              is a concept in programming that refers to where a constant or
+              variable is accessible in the program. Scopes can be either global
+              or local.
+            </p>
+            <ul>
+              <li>
+                Variables declared outside a block are said to have a global
+                scope. That is, it can be used everywhere in the program.
+              </li>
+              <li>
+                Variables declared inside a block using the let and const are
+                said to have a local scope. That is, their values are limited
+                inside their blocks and cannot be accessed from the outside.
+              </li>
+            </ul>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3>Template Literals</h3>
+            <p>
+              this is a special type of string that uses the backtick character
+              to enclose a string. The advantage of using a template literal is
+              its ability to use both types of quotation marks. Here is an
+              example of using a template literal. <code>`Hello World`</code>
+            </p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3>Arrays</h3>
+            <p>
+              are built-in objects that store an ordered list of values. In
+              JavaScript, an array can be created using the following snippet
+              <code>const myArray = [];</code> JavaScript has powerful methods
+              to be used by arrays.
+            </p>
+            <ul>
+              <li>
+                Pop() removes the last item from an array. Ex: myArray.pop();
+              </li>
+              <li>
+                The shift() method removes the first item of an array. Ex:
+                myArray.shift();
+              </li>
+              <li>
+                The push() method appends a new value to the end of the array.
+                Ex: myArray.push();
+              </li>
+              <li>
+                The unshift() method appends a new value at the beginning of the
+                array
+              </li>
+            </ul>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3>Function</h3>
+            <p>
+              A function is a group of statements that together perform one task
+              and can be referenced by name. functions help reduce repetition
+              and make code easier. There are three most common ways to define a
+              function in JavaScript. Here are some of the ways to define a
+              function in JavaScript. <br />
+              Function Declaration <br />
+              <code
+                >function greetings(){<br />
+                console.log('Hello World!');<br />
+                } </code
+              ><br />
+              Function Expression <br />
+              <code
+                >const goodbye = function(){<br />
+                console.log('Goodbye World!');<br />
+                }; </code
+              ><br />
+              Arrow Function <br />
+              <code>const hello = () => alert('Hello World!');</code><br />
+              A function without a name is known as an anonymous function. To
+              invoke a function in JavaScript, type the name of the function
+              then followed by parenthesis. Eg. <code>greetings ();</code> A
+              callback function is a function that is passed as an argument to
+              another function.
+            </p>
+          </article>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

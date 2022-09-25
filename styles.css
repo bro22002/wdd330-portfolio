@@ -22,3 +22,12 @@ h1 {
 p {
     padding: 0 .5rem;
 }
+
+code {
+    color: #158631;
+}
+
+::selection {
+    color: #fff;
+    background-color: #308D46;
+}
