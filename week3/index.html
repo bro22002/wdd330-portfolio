@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <title>WDD 330 | week 3 notes</title>
+</head>
+
+<body>
+  <header>
+    <h1>WDD 330 Portfolio</h1>
+  </header>
+  <main>
+    <h2>Week 03</h2>
+    <ul>
+      <li>
+        <article>
+          <h3>Objects</h3>
+          <p>
+            In JavaScript, an object is a collection of named properties with
+            related values and functions. Object act like a dictionary where
+            you use a property name to look for its value. Objects are used to
+            keep related information and functionality together in the same
+            place.
+          </p>
+        </article>
+      </li>
+      <li>
+        <article>
+          <h3>Objects Literals</h3>
+          <p>
+            In JavaScript, object literals are created by wrapping their
+            properties and methods in curly braces. Each property is stored in
+            key-value pairs separated by commas. Properties with the typeOf
+            function are called methods. Yes, object literals can have
+            functions inside them. All objects are mutable at any time when a
+            program is running. This means that its properties and methods can
+            be changed or removed, and new properties and methods can be added
+            to the object, even if it was declared using const. Here is an
+            example of an object literal.  <br>
+            <code>
+                const customer = { <br>
+                  name: 'Joe Doe', <br>
+                  account: 'current' }
+              </code>
+          </p>
+          <p>
+            You can access the properties of an object using the dot notation:
+            customer.name You can also access an object’s properties using
+            bracket notation ― the property is represented by a string inside
+            square brackets, so needs to be placed inside single or double
+            quotation marks: <code>customer[“name”]</code><br />
+            Some importance of using objects is, it is created quickly without
+            the need of defining a class, and they also provide a useful way
+            of organizing your code without polluting the global namespace.
+          </p>
+        </article>
+      </li>
+      <li>
+        <article>
+          <h3>Object Method "this"</h3>
+          <p>
+            JavaScript objects are usually created to represent entities of
+            the real world. The use of objects in our code is termed
+            object-oriented programming. <br />
+            The use of <code>this</code> keyword is used by methods to access
+            methods. The value of <code>this</code> is referenced to the
+            object. What is the benefit of using this keyword in our code? We
+            can access the object without the use of
+            <code>this</code> referencing it to an outer variable. We may
+            likely overwrite the object when we assign it to another variable.
+            In JavaScript, <code>this</code> is not bound. It can be used in
+            any function even if it is not a method of an object. Its value is
+            evaluated at call-time and does not depend on where the method was
+            declared, but rather on what object is “before the dot”.
+          </p>
+        </article>
+      </li>
+      <li>
+        <article>
+          <h3>The Document Object Model (DOM)</h3>
+          <p>
+            <abbr title="Document Object Model">DOM</abbr> allows you to access elements of a web page and enable
+            interaction with the page. It represents an <abbr title="Hypertext Markup Language">HTML</abbr> document as a
+            network of connected nodes that form a tree-like structure. We can
+            use JavaScript to access and modify different parts of a web page
+            using a special built-in object called a document. The <abbr title="Document Object Model">DOM</abbr>
+            provides several methods that allow us to access any element on a
+            page. These objects can then be assigned to a variable and
+            inspected or modified. Eg: <code>const body = document.body;</code><br />
+            We can use some <abbr title="Document Object Model">DOM</abbr> methods to get any elements of a webpage and
+            interact with it. Here are some examples of using these methods.
+            The <abbr title="Document Object Model">DOM</abbr> has numerous getter and setter methods that can be used
+            to
+            view, add, remove or modify the value of any of these attributes.
+            The document.getElementById(), document.getElementsByClassName(),
+            document.getElementsByTagNames() and document.querySelector() can
+            be used to access elements on a page. <br />
+            An element’s attributes can be accessed using the <code>getAttribute()</code>
+            method, and updated using the <code>setAttribute()</code> method. <br />
+            The <code>createElement()</code> and <code>createTextNode()</code> methods can be used to
+            create dynamic markup on the fly. <br />
+            Markup can be added to the page using the <code>appendChild()</code> and
+            <code>insertBefore()</code> methods. <br />
+            Elements can be replaced using the <code>replaceChild()</code> method and
+            removed using the <code>removeChild()</code> method. <br />
+            The innerHTML property can be used to insert raw HTML directly
+            into the <abbr title="Document Object Model">DOM</abbr>. <br />
+            The CSS properties of an element can be changed by accessing the
+            style property.
+          </p>
+        </article>
+      </li>
+      <li>
+        <article>
+          <h3>Events</h3>
+          <p>
+            Events are another part of the <abbr title="Document Object Model">DOM</abbr> and they are what provide the
+            link between the web page and user interactions. Every time a user
+            interacts with a web page, such as clicking on a link, pressing a
+            key, or moving a mouse, an event occurs that our program can
+            detect and then respond to. JavaScript uses the event listener to
+            check when an event happens, and the program that can respond
+            appropriately. An event listener is attached to an element, then
+            invokes a callback function when the event occurs. There are many
+            types of events, including mouse events, keyboard events, and
+            touch events. Syntax of adding event listener:
+            <code>document.body.addEventListener("click", doSomething);</code>
+          </p>
+        </article>
+      </li>
+    </ul>
+  </main>
+</body>
+
+</html>
