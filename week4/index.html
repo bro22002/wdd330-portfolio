@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>WDD 330 | week 4 notes</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>WDD 330 Portfolio</h1>
+    </header>
+    <main>
+      <h2>Week 04</h2>
+      <ul>
+        <li>
+          <article>
+            <h3>Forms</h3>
+            <p>
+              Forms are one of the methods of interacting with web pages. Many
+              websites use forms to interact with users. Users use forms to log
+              in to their favorite websites. JavaScript is one of the web
+              technologies that can be used to interact with form elements on a
+              website. JavaScript can be used to give form control, validate
+              forms, retrieve, and change values from a form, among others. A
+              form is made of a <code>form</code> element that contains form
+              controls such as input fields, buttons, textarea, and select
+              menus.
+            </p>
+            <br>
+            When accessing form elements, we can use the following ways to do
+            that: <br>
+            <code>
+              const form = document.forms[0]; <br>
+              const form = document.getElementsByTagname('form')[0];<br>
+              const form = document.forms['search'];<br>
+            </code>
+            we can also access the form controls using the name attributes in
+            the HTML as if it is an object property. Here are examples:
+            <code>const input = form.searchInput</code> or
+            <code>const input = form['searchInput']</code>
+                <h4>Forms Events</h4>
+                <ul>
+                  <li>The focus event triggers when a form element is focused</li>
+                  <li>
+                    The bur event triggers when a focused element is unfocused
+                  </li>
+                  <li>
+                    The change event triggers when the focus is moved away from the
+                    form after changing it
+                  </li>
+                  <li>
+                    The submit event is used to intercept a form before it’s been
+                    submitted
+                  </li>
+                </ul>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3>Form Validation</h3>
+            <p>
+              Form validation is the process of ensuring users enter information
+              correctly into a form. Form validation can be used to check a
+              valid email, minimum password characters, a completed required
+              field, etc. JavaScript can be used to validate forms both on the
+              client side and the server side. To ensure more valid data is sent
+              to the server, it is advisable to use both methods of validation.
+              Using JavaScript in validation is used to enhance the user
+              experience by giving feedback and preventing errors before the
+              form is submitted. <br>
+              HTML5 has its own form validation API that can be used. The API
+              works by adding relevant attributes to the form fields. For
+              example, if a field is required simply add required attribute to
+              the field.
+            </p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3>Disabling the Submit Button</h3>
+            <p>
+              A submit button can be disabled by adding the disabled attribute
+              to the <code>input</code> element: <br>
+              <code
+                >&lt;button type='submit' id='submit'
+                disabled>Submit&lt;/button></code
+              ><br>
+              This can be changed programmatically using the disabled property
+              of the <code>button</code> element. The following function will
+              disable the button if an input field is empty: <br>
+              <code
+                >function disableSubmit(event) {<br>
+                if(event.target.value === ''){<br>
+                document.getElementById('submit').disabled = true;<br>
+                } else {<br>
+                document.getElementById('submit').disabled = false;<br>
+                }<br>
+                }
+              </code>
+            </p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3>Object Oriented Programming</h3>
+            <p>
+              Object-oriented programming (OOP) is a way of programming that
+              uses objects that encapsulate their own properties and methods.
+              The main concepts of OOP are encapsulation, polymorphism, and
+              inheritance.
+            </p>
+            <p>
+              Encapsulation is then defined as the process of hiding details of
+              code from other code so that it can’t be seen or used by them. The
+              benefit of using encapsulation in OOP is to minimize the
+              interdependencies between different parts of our program and
+              prevent them from breaking due to changes made in the code or the
+              program. An application of encapsulation is modifiers to hide
+              attributes of classes so that other code does not attempt to
+              change them directly.
+            </p>
+            <p>
+              Polymorphism is the ability of a child object to change the
+              behavior of a method inherited from a parent object. The
+              importance of polymorphism requires the skillful application of
+              abstraction, encapsulation, and inheritance, resulting in a
+              powerful mechanism to ensure a flexible change in a program. It
+              also helps to reuse codes in our program.
+            </p>
+            <p>
+              Inheritance is the mechanism by which a class obtains the
+              attributes and methods of another prototype automatically. That
+              is, without having to type all the attributes and the methods
+              again. The benefit of using inheritance in our programs is to save
+              many hours of coding. The application of inheritance saves us to
+              write prototype attributes and methods over and over again which
+              permits us to reuse code.
+            </p>
+            <ul>
+              <li>
+                <h4>Classes</h4>
+                <p>
+                  Before ES6, JavaScript didn’t have classes. It used the
+                  concept of using actual objects as the blueprint for creating
+                  more objects. This is known as a prototype-based language.
+                  Even though ES6 now supports classes, it still uses this
+                  prototypal inheritance model in the background.
+                </p>
+              </li>
+            </ul>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3>Modular JavaScript</h3>
+            <h4>ES6 Modules</h4>
+            <p>
+              JavaScript introduces modules in ES6. Modules allow you to keep
+              parts of code in self-contained files. An ES6 module file is just
+              a normal JavaScript file but uses the keyword export to specify
+              any values or functions that are to be made available from the
+              module. Example: export <code>const PI = 3.1415926;</code> saved
+              in pi.js file. Can be used in the main.js as
+              <code>import { PI } from './pi.js';</code><br>
+              If there are a lot of values and functions to be imported, you can
+              import it as an example:
+              <code>import * as PI from './pi.js';</code>
+            </p>
+            Some important points about modules to be noted:
+            <ul>
+              <li>
+                All code in modules is always in strict mode without the need
+                for 'use strict' and there is no way to opt out of this.
+              </li>
+              <li>
+                A module has its own global scope, so any variables created in
+                the top-level of a module can only be accessed within that
+                module.
+              </li>
+              <li>
+                The value of this in the top level of a module is undefined,
+                rather than the global object.
+              </li>
+              <li>
+                You can’t use HTML-style comments in modules (although this
+                isn’t verycommon in any JavaScript program these days).
+              </li>
+            </ul>
+          </article>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
