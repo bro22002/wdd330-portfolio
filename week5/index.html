@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>WDD 330 | week 5 notes</title>
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+    </header>
+    <main>
+        <h2>Week 04 - Testing & Debugging</h2>
+        <ul>
+            <li>
+                <article>
+                    <h3>Errors, Exceptions, and Warnings</h3>
+                    Errors are caused when something goes wrong in a program. These are the type of errors in
+                        programming: <br>
+                    <ul>
+                        <li>
+                            <p>System error: an error due to a problem with the system or failure of the program to
+                                interact with external devices</p>
+                        </li>
+                        <li>
+                            <p>Programmer error: error caused by incorrect syntax by the programmer</p>
+                        </li>
+                        <li>
+                            <p>User error: error caused by the incorrect input or data by the user which the program
+                                can’t handle</p>
+                        </li>
+                    </ul>
+                    <p>
+                    As programmers, we must ensure that errors are minimized and fixed promptly. We should try to limit
+                    user errors by predicting any possible errors and providing a solution to handle them to give a
+                    better user experience. This can be done by raising or using exceptions.
+                    </p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Exceptions</h3>
+                    <p>An exception is an error that produces a return value used by the program to deal with errors.
+                        Exceptions also produce a <strong>stack trace</strong>. The stack trace is a sequence of
+                        functions or methods that leads to calls that lead to the point where the error occurred. It
+                        works backward through the sequence from the point of error to identify the original function or
+                        method that caused the error.</p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Warnings</h3>
+                    <p>Warnings occur when an error in a code isn’t enough to cause the program to crash. This means
+                        that the program will continue to run after the warning is raised. This can be problematic
+                        because the warning may cause the program to run incorrectly. Below is an example of a warning
+                        caused by an undeclared variable: <br>
+                        <code>
+                        pi = 3.142; <br>
+                        &lt;&lt; JavaScript Warning: assignment to undeclared variable
+                    </code>
+                    </p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Strict Mode</h3>
+                    <p>Writing code in strict mode can also help improve its clarity and speed since it follows
+                        conventions and will throw exceptions if any sloppy code practices are used. Not using strict
+                        mode is often referred to as “sloppy mode” as it’s forgiving of sloppy programming practices.
+                        Strict mode encourages a better quality of JavaScript to be written. It is recommended to use
+                        the strict mode. To use the strict mode, just add the following string to the first line of a
+                        JavaScript file: <br>
+                        <code>'use strict';</code><br>
+                        You can also use strict mode on a per-function basis by adding the line inside a function.
+                        Strict mode will then only be applied to anything inside that function: <br>
+                        <code>
+                        function strictly(){<br>
+                            'use strict';<br>
+                            // function code goes here <br>
+                            }                            
+                    </code><br>
+                        <em><strong>NB</strong>: ES6 introduced JavaScript modules (covered later in chapter 15). These
+                            are self-contained pieces of code that are in strict mode by default, so the
+                            <code>'use strict'</code> declaration is not required.</em>
+                    </p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Linting tools</h3>
+                    <p>These are tools that are designed to highlight sloppy programming practices and syntax errors.
+                        They can be used to test the quality of JavaScript code beyond the strict mode. Linting tools
+                        are useful to enforce programming styles guide. Examples of linting tools are JS Lint, JS Hint,
+                        and ES Lint.</p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Feature Detection</h3>
+                    <p>Is a way of checking for browser support for a feature. We can use JavaScript to check for
+                        feature detection using an if statement to check whether an object or method exists before
+                        trying to call the method. This ensures that no error occurs if the browser doesn’t support the
+                        method. Calling the method outside the if block would cause an exception to be thrown. Feature
+                        detection guarantees that the method is only called if it actually exists and fails gracefully,
+                        without any exceptions being thrown, if the method doesn’t exist. <code>Window.holoDeck</code>
+                        doesn’t exist.</p><br>
+                    <code>
+                        if (window.holoDeck) {<br>
+                            virtualReality.activate();<br>
+                            }                            
+                    </code>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Debugging in the Browser</h3>
+                    <p>Debugging is the process of finding bugs in your code and fixing them. Mostly, the point at which
+                        the error occurs is not where it originated. When debugging, we can set breakpoints that halt
+                        the progress of the code through steps and help us to check the value of different variables at
+                        that point of the program. We can use alert (), console.log (), and console.trace () methods to
+                        debug in JavaScript. The console and browser’s built-in debugging tool can be used to
+                        interactively find and fix bugs in code. <br></p>
+                    <p>One of the most useful commands is the debugger keyword. This will create a breakpoint in your
+                        code that will pause the execution of the code and allow you to see where the program is
+                        currently up to. You can also hover over any variables to see what value they hold at that
+                        point. The program can then be restarted by clicking on the play button. <br>
+                        The example below uses the debugger command to debug a function: <br>
+                        <code>
+                            function amIOldEnough(age){<br>
+                                debugger;<br>
+                                if (age &lt; 12) {<br>
+                                debugger;<br>
+                                return 'No, sorry.';<br>
+                                } else if (age &lt; 18) {<br>
+                                debugger;<br>
+                                return 'Only if you are accompanied by an adult.';<br>
+                                } else {<br>
+                                debugger;<br>
+                                return 'Yep, come on in!';<br>
+                                }<br>
+                                }                                
+                        </code><br>
+                        <em><strong>NB</strong>: Remember to remove any references to the debugger command before
+                            shipping any code, otherwise the program will appear to freeze when people try to use
+                            it!</em>
+                    </p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Error Objects</h3>
+                    <p>An error object is created when an exception occurs. It can also be created in the code using a
+                        constructor function that takes an error message as a parameter. <br>
+                        <code>const error = new Error('Oops, something went wrong');</code>
+                    </p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Throwing Exceptions</h3>
+                    <p>Exceptions can be thrown using the throw statement. This will allow for any problems in your code
+                        to be highlighted and dealt with, rather than lurk quietly in the background. The throw
+                        statement can be applied to any JavaScript expression, causing the execution of the program to
+                        stop. It is best practice, however, to throw an error object. Example: throw new
+                        Error('Something has gone badly wrong!');</p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Exception Handling (try, catch, finally)</h3>
+                    <p>If we suspect a piece of code will result in an exception, we can wrap it in a try block. This
+                        will run the code inside the block as normal. Any code placed inside a try block will pass any
+                        error objects to a catch block when an exception occurs. Any code inside a finally block will
+                        run if an exception does or does not occur. <br>
+                        <code>
+                        function imaginarySquareRoot(number) {<br>
+                            'use strict';<br>
+                            let answer;<br>
+                            try {<br>
+                            answer = String(squareRoot(number));<br>
+                            } catch(error) {<br>
+                            answer = squareRoot(-number)+"i";<br>
+                            } finally {<br>
+                            return `+ or - ${answer}`;<br>
+                            }<br>
+                            }                            
+                    </code>
+                    </p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Tests</h3>
+                    <p>Test-driven development is the practice of writing tests that fail, then writing the code that
+                        passes the test, then refactoring the code every time a new feature is implemented.</p>
+                </article>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>
