@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-family: Acme, Arial, sans-serif;
+    margin: 5rem auto;
+    background-color: #f1f5f8;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+main {
+    margin: .5rem auto;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: .5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: .5rem;
+    background-color: #bed;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 95%;
+}
+
+.alert {
+    margin-bottom: 1rem;
+    height: 1.25rem;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    font-size: .7rem;
+    border-radius: .25rem;
+    letter-spacing: .25rem;
+    text-transform: capitalize;
+}
+
+.alert-danger {
+    color: #721c24;
+    background: #f8d7da;
+}
+
+.alert-success {
+    color: #155724;
+    background: #d4edda;
+}
+
+input,
+label,
+button {
+    padding: .35rem;
+    margin-left: 1rem;
+    font-size: 1.1rem;
+}
+
+p {
+    margin-left: 1rem;
+}
+
+.listContainer {
+    margin-top: 2rem;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s linear;
+    padding: .25rem 1rem;
+    border-radius: .25rem;
+    text-transform: capitalize;
+}
+
+.todo-item:hover {
+    color: #617d98;
+    background: #f1f5f8;
+}
+
+.grocery-item:hover .title {
+    color: #617d98;
+}
+
+button {
+    cursor: pointer;
+}
+
+input {
+    width: 300px;
+    padding: 0.25rem;
+    border-radius: .5rem 0 0 .5rem;
+    border-color: transparent;
+    background: #f1f5f8;
+}
+
+input[type="checkbox"] {
+    width: auto;
+}
+
+label {
+    font-size: .9rem;
+}
+
+.listcontainer {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.list {
+    margin: .2rem;
+}
+
+ul {
+    margin: 1rem;
+    list-style: none;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.todo-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-transform: capitalize;
+}
+
+.btn-container {
+    text-align: right;
+}
+
+.edit-btn,
+.delete-btn {
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    font-size: .7rem;
+    margin: 0 .15rem;
+    transition: all 0.3s linear;
+}
+
+.clear-btn {
+    display: grid;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 1.25rem;
+    color: #e66b6b;
+    border-radius: .5rem;
+    border: none;
+    background: transparent;
+    letter-spacing: .25rem;
+}
+
+.clear-btn:hover {
+    color: #bb2525;
+}
+
+@media only screen and (min-width: 32.5em) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        width: 480px;
+    }
+}
