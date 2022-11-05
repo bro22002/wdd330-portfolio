@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>WDD 330 | week 8 notes</title>
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+    </header>
+    <main>
+        <h2>Week 08</h2>
+        <ul>
+            <li>
+                <article>
+                    <h3>CSS3 Transforms and Transitions</h3>
+                    <h3>Transforms</h3>
+                    <p>We can manipulate an element’s appearance using transform functions. The value of the transform
+                        property is one or more transform functions (separated by spaces) that will be applied in the
+                        order they’re provided.</p>
+                    <h3>Translation</h3>
+                    <p>Translation functions allow you to move elements left, right, up, or down. These functions behave
+                        like position: relative;. Using translate functions makes you move elements without impacting
+                        the flow of the document. The translated element can only be moved relative to its current
+                        position.
+                        The translate(x,y) function moves an element x from the left, and y from the top:
+                    </p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=css&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=transform%253A%2520translate%2845px%252C%2520-45px%29%253B&tb="
+                        style="width: 590px; height: 188px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe><br>
+                    <span>For older browser support:</span><br>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=css&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=-webkit-transform%253A%2520translate%2845px%252C-45px%29%253B%2520%252F*%2520iOS8%252C%2520Android%25204.4.3%252C%2520BB10%2520*%252F%250A-ms-transform%253A%2520translate%2845px%252C-45px%29%253B%2520%252F*%2520IE9%2520only%2520*%252F%250Atransform%253A%2520translate%2845px%252C-45px%29%253B&tb="
+                        style="width: 590px; height: 246px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                    <p>You can move an element vertically or horizontally, by using the translatex or translatey
+                        functions respectively. To move 45px to the right along the x-axis, include:
+                        <code>transform: translateX(45px);</code>
+                    </p>
+                    <span><em>NB: Transforms don’t work on inline elements. Just add display: inline-block; to inline
+                            elements.</em></span>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Scaling</h3>
+                    <p>The scale(x,y) function scales an element by the defined factors horizontally and then
+                        vertically. If only one value is provided, it will be used for both the x and y values, growing
+                        or shrinking your element or pseudo-element while maintaining the original aspect ratio. For
+                        example, scale(1) would leave the element the same size, scale(2) would double its proportions,
+                        scale(0.5) would halve them, and so on. You can also use the scaleX(x) or scaleY(y) functions.
+                        Scaling has no impact on document flow. Example: <code>transform: scale(1.5, 0.25);</code></p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Rotation</h3>
+                    <p>The rotate() function rotates an element around the point of origin by a specified angle value.
+                        The point of origin is the center of the element. Angles are declared in degrees, grads,
+                        radians, or turns. Positive degrees rotate clockwise and negative rotate counterclockwise.</p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=css&width=425&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=transform%253A%2520rotate%2810deg%29%2520translateX%2840px%29%2520scale%281.5%29%253B&tb="
+                        style="width: 596px; height: 188px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Skew</h3>
+                    <p>The skew(x,y) function specifies a skew along the x and y axes. If the second parameter is
+                        omitted, the skew will only occur on the x-axis. Axis-specific functions skewX() and skewY().
+                    </p>
+                    <code>transform: skew(15deg, 4deg);</code>
+                    <h4>Changing the Origin of the Transform</h4>
+                    <p>Changing the origin of the transform the transform-origin property. It has the same syntax as the
+                        background-position property and defaults to the center of the object.</p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Transitions</h3>
+                    <h4>Steps to apply transitions</h4>
+                    <ol>
+                        <li>Declare the original state of the element in the default style declaration.</li>
+                        <li>Declare the final state of your transitioned element; for example, a :hover state.</li>
+                        <li>Include the transition functions in your default style declaration using the transition
+                            properties, including: transition-property, transition-duration, transition-timing-function,
+                            and transition-delay.</li>
+                    </ol>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Animation</h3>
+                    <p>CSS animations, unlike transitions, allow you to control each step of an animation via keyframes.
+                        A keyframe is a snapshot that defines a starting or end point of any smooth transition. With CSS
+                        transitions, we’re essentially limited to defining the first and the last keyframe. CSS
+                        animations allow us to add any number of keyframes in between, to guide our animation in more
+                        complex ways.</p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Keyframes</h3>
+                    <p>To animate an element in CSS, you first create a named animation, then attach it to an element in
+                        that element’s property declaration block. Animations in themselves don’t do anything; to
+                        animate an element, you’ll need to associate the animation with that element.</p>
+                    <p>To create an animation, use the @keyframes rule for IE10+ and FF16+. Include @-webkit-keyframes
+                        for all WebKit implementations followed by a name of your choosing, which will serve as the
+                        identifier for the animation. Then, you can specify your keyframes. <br>
+                        For an animation called myAnimation, the @keyframes rule would look like this:</p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=css&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=%2540-webkit-keyframes%2520myAnimation%2520%257B%250A%252F*%2520put%2520animation%2520keyframes%2520here%2520*%252F%250A%257D%250A%2540keyframes%2520myAnimation%2520%257B%250A%252F*%2520put%2520animation%2520keyframes%2520here%2520*%252F%250A%257D&tb="
+                        style="width: 590px; height: 285px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Canvas</h3>
+                    <p>We can use JavaScript to draw anything using HTML5’s canvas API. With canvas, we can draw shapes
+                        and lines, arcs and text, gradients and patterns. In addition, canvas gives us the power to
+                        manipulate pixels in images and even videos. The first step to using canvas is to add a canvas
+                        element to the page like below:</p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=css&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=%253Ccanvas%2520id%253D%2522myCanvas%2522%2520class%253D%2522myCanvas%2522%2520width%253D%2522200%2522%2520height%253D%2522200%2522%253E%250ASorry%21%2520Your%2520browser%2520doesn%25E2%2580%2599t%2520support%2520Canvas.%250A%253C%252Fcanvas%253E%250A&tb="
+                        style="width: 590px; height: 304px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                </article>
+                <article>
+                    <h4>Drawing on the Canvas</h4>
+                    <p>All drawing on the canvas happens via the Canvas JavaScript API. Before we can draw on a canvas,
+                        we need to grab hold of the canvas element on our page: <br>
+                        <code>var canvas = document.getElementById("myCanvas");</code>
+                    </p>
+                    <p>Once we’ve stored our canvas element in a variable, we then set up the canvas’s context. The
+                        context is the place where your drawing is rendered. The W3C Canvas spec defines the context in
+                        the CanvasRenderingContext2D interface.</p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=javascript&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=var%2520canvas%2520%253D%2520document.getElementById%28%2522myCanvas%2522%29%253B%250Avar%2520context%2520%253D%2520canvas.getContext%28%25222d%2522%29%253B%2520%252F%252F2d%2520is%2520defined%2520CanvasRenderingContext2D&tb="
+                        style="width: 590px; height: 227px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Filling Our Brush with Color</h3>
+                    <p>We will use the strokeStyle or fillStyle properties which are set on the object. It takes one of
+                        three values: a string representing a color, a CanvasGradient object, or a CanvasPattern object.
+                        The strokeStyle is used for drawing lines, borders, and outlines, and the fillStyle is used to
+                        add color to a space. The stroke and the fill style accept hexadecimal values, color name, RGB
+                        value, and rgba. Here is an example:</p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=javascript&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=var%2520canvas%2520%253D%2520document.getElementById%28%2522myCanvas%2522%29%253B%250Avar%2520context%2520%253D%2520canvas.getContext%28%25222d%2522%29%253B%250Acontext.strokeStyle%2520%253D%2520%2522red%2522%253B%250Acontext.fillStyle%2520%253D%2520%2522rgba%280%252C%25200%252C%2520255%252C%25200.5%29%2522%253B&tb="
+                        style="width: 590px; height: 246px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Drawing a Rectangle to the Canvas</h3>
+                    <p>To draw a rectangle, we can repeat the steps we just took: grabbing the canvas and the context
+                        and setting a fill and stroke style. We can do this by calling the fillRect and strokeRect
+                        methods. Both of these methods take the X and Y coordinates where you want to begin drawing the
+                        fill or the stroke, and the width and height of the rectangle. For example, let's draw a
+                        rectangle by adding the stroke and fill 10 pixels from the top and 10 pixels from the left of
+                        the canvas’s top-left corner:</p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=javascript&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=var%2520canvas%2520%253D%2520document.getElementById%28%2522myCanvas%2522%29%253B%250Avar%2520context%2520%253D%2520canvas.getContext%28%25222d%2522%29%253B%250Acontext.strokeStyle%2520%253D%2520%2522red%2522%253B%250Acontext.fillStyle%2520%253D%2520%2522rgba%280%252C%25200%252C%2520255%252C%25200.5%29%2522%253B%250Acontext.fillRect%2810%252C%252010%252C%2520100%252C%2520100%29%253B%250Acontext.strokeRect%2810%252C%252010%252C%2520100%252C%2520100%29%253B&tb="
+                        style="width: 590px; height: 285px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Drawing Other Shapes by Creating Paths</h3>
+                    <p>We can draw any shape by using JavaScript. To draw more interesting shapes, we must first lay out
+                        the path of the shape. Paths create a blueprint for your lines, arcs, and shapes, but paths are
+                        invisible until you give them a stroke! When we drew rectangles, we first set the strokeStyle
+                        and then called fillRect. With more complex shapes, we need to take three steps: layout the
+                        path, stroke the path, and fill the path. As with drawing rectangles, we can just stroke the
+                        path, or fill the path—or we can do both. To draw a circle, first begin the path of the circle
+                        with the beginPath() method, which resets the default path for you to begin drawing a new shape.
+                        Now we need to create an arc using the arc method. The signature for the arc method is arc(x, y,
+                        radius, startAngle, endAngle, anticlockwise). Where x and y represent where on the canvas you
+                        want the arc’s path to begin. The next step is to close the path using the closePath method.
+                        Lastly, we fill and stroke the path. Note that this time, the method names are different from
+                        those we used with our rectangle. To fill a path you simply call fill, and to stroke it, you
+                        call stroke. Let's put it all together.</p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=javascript&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=function%2520drawCircle%28canvas%29%2520%257B%250Avar%2520context%2520%253D%2520canvas.getContext%28%25222d%2522%29%253B%250Acontext.beginPath%28%29%253B%250Acontext.arc%2850%252C%252050%252C%252030%252C%25200%252C%2520Math.PI*2%252C%2520true%29%253B%250Acontext.closePath%28%29%253B%250Acontext.strokeStyle%2520%253D%2520%2522red%2522%253B%250Acontext.fillStyle%2520%253D%2520%2522blue%2522%253B%250Acontext.lineWidth%2520%253D%25203%253B%250Acontext.fill%28%29%253B%250Acontext.stroke%28%29%250A%257D%250A&tb="
+                        style="width: 590px; height: 400px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Savings Canvas Drawings</h3>
+                    <p>We can save our canvas image by using the API’s toDataURL method. This creates a URL with the
+                        image in it. You can then right-click the image at this URL, and save it as a PNG or JPEG. Let's
+                        see the application here:</p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=htmlmixed&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=%253Ch2%253EDemo%25205%253A%2520Saving%2520canvas%2520drawings%253C%252Fh2%253E%250A%253Ccanvas%2520width%253D%2522200%2522%2520height%253D%2522200%2522%2520id%253D%2522demo5%2522%2520class%253D%2522myCanvas%2522%253E%250ASorry%21%2520Your%2520browser%2520doesn%27t%2520support%2520Canvas.%250A%253C%252Fcanvas%253E%250A%253Cbutton%2520name%253D%2522saveButton%2522%2520id%253D%2522saveButton%2522%253ESave%2520Drawing%253C%252Fbutton%253E%250A&tb="
+                        style="width: 590px; height: 323px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe> <br>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=javascript&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=function%2520saveDrawing%28%29%2520%257B%250Avar%2520canvas5%2520%253D%2520document.getElementById%28%2522demo5%2522%29%253B%250Awindow.open%28canvas5.toDataURL%28%2522image%252Fpng%2522%29%29%253B%250A%257D%250Avar%2520button%2520%253D%2520document.getElementById%28%2522saveButton%2522%29%253B%250Abutton.addEventListener%28%2522click%2522%252C%2520saveDrawing%252C%2520false%29%253B%250A&tb="
+                        style="width: 590px; height: 323px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>SVG</h3>
+                    <p>SVG stands for Scalable Vector Graphics. It is a specific file format that allows you to describe
+                        vector graphics using XML. A major selling point of vector graphics which preserve their quality
+                        even as you blow them up or shrink them down. Unlike canvas, images created with SVG are
+                        available via the DOM. This enables technologies such as screen readers to see what’s present in
+                        an SVG object through its DOM node, as well as allowing you to inspect SVG using your browser’s
+                        developer tools. Since SVG is an XML file format, it’s also more accessible to search engines
+                        than canvas.</p>
+                    <h4>Drawing in SVG</h4>
+                    <p>Here is an example of drawing a circle in SVG which is easier than in canvas:</p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=htmlmixed&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=%253Csvg%2520xmlns%253D%2522http%253A%252F%252Fwww.w3.org%252F2000%252Fsvg%2522%2520viewBox%253D%25220%25200%2520400%2520400%2522%253E%250A%253Ccircle%2520cx%253D%252250%2522%2520cy%253D%252250%2522%2520r%253D%252225%2522%2520fill%253D%2522red%2522%252F%253E%250A%253C%252Fsvg%253E%250A&tb="
+                        style="width: 590px; height: 265px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                    <p>The viewBox attribute defines the starting location, width, and height of the SVG image.
+                        The circle element defines a circle with cx and cy, the X and Y coordinates of the center of the
+                        circle. The radius is represented by r, while fill defines the fill style.
+                        To view an SVG file, you simply open it via the File menu in any browser that supports SVG.
+                    </p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Drag and Drop</h3>
+                    <p>The Drag and Drop API allows us to specify that certain elements are draggable, and then specify
+                        what should happen when these draggable elements are dragged over or dropped onto other elements
+                        on the page. There are two major kinds of functionality you can implement with Drag and Drop:
+                        dragging files from your computer into a web page—in combination with the File API—or dragging
+                        elements into other elements on the same page.
+                        There are several steps to adding drag and drop to your page:
+                    </p>
+                    <ol>
+                        <li>Set the draggable attribute on any HTML elements you’d like to be draggable.</li>
+                        <li>Add an event listener for the dragstart event on any draggable HTML elements.</li>
+                        <li>Add an event listener for the dragover and drop events on any elements that you want to
+                            accept dropped items.</li>
+                    </ol>
+                </article>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>
