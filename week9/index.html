@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>WDD 330 | week 9 notes</title>
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+    </header>
+    <main>
+        <h2>Week 09</h2>
+        <ul>
+            <li>
+                <article>
+                    <h3>The Window Object</h3>
+                    <p>The window object is the global object which represents the browser window that contains a web
+                        page. The window Object is a global object. This means that any global variable created is a
+                        property of the window object.</p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>The Browser Object Model</h3>
+                    <p>The Browser Object Model is a collection of properties and methods that contains browser
+                        information and the screen. It can be used to view which browser is being used to view a web
+                        page and the dimensions of the screen it is being viewed on. It can also be used to create
+                        pop-up windows. Dialogs:</p>
+                    <ul>
+                        <li>The window.alert() method will pause the execution of the program and display a message in a
+                            dialog box. The message is provided as an argument to the method, and undefined is always
+                            returned.</li>
+                        <li>The window.confirm() method will stop the execution of the program and display a
+                            confirmation dialog that shows the message provided as an argument and gives the options of
+                            OK or Cancel. It returns the boolean values of true if the user clicks OK, and false if the
+                            user clicks Cancel.</li>
+                        <li>The window.prompt() method will stop the execution of the program. It displays a dialog that
+                            shows a message provided as an argument, as well as an input field that allows the user to
+                            enter text. This text is then returned as a string when the user clicks OK. If the user
+                            clicks Cancel, null is returned.</li>
+                    </ul>
+                    Example of using dialogs: <br>
+                    <code>window.confirm('Do you wish to continue?');<br>
+                        << undefined
+                        </code>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Controlling Windows</h3>
+                    <p>A new window can be opened using the window.open() method. This takes the URL of the page to be
+                        opened as its first parameter, the window title as its second parameter, and a list of
+                        attributes as the third parameter. This can also be assigned to a variable, so the window can
+                        then be referenced later in the code:</p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=javascript&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=const%2520popup%2520%253D%2520window.open%28%27https%253A%252F%252Fsitepoint.com%27%252C%27SitePoint%27%252C%27width%253D400%252Cheight%253D400%252Cresizable%253Dyes%27%29%253B&tb="
+                        style="width: 590px; height: 227px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Screen Information</h3>
+                    <p>You can find out the height and width of the screen in pixels using the height and width
+                        properties of the windows.screen object. Like below:</p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=javascript&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=window.screen.height%250A%253C%253C%25201024%250A%250Awindow.screen.width%250A%253C%253C%25201280%250A&tb="
+                        style="width: 590px; height: 285px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                    <p>The availHeight and availWidth can be used to find the height and width of the screen, excluding
+                        any operating system menus:</p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=javascript&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=window.screen.availWidth%250A%253C%253C%25201280%250A%250Awindow.screen.availHeight%250A%253C%253C%2520995%250A&tb="
+                        style="width: 590px; height: 285px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                    <p><em>NB: The Screen object has more uses for mobile devices. It also allows you to do things like
+                            turn off the device's screen, detect a change in its orientation or lock it in a specific
+                            orientation.</em></p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Cookies</h3>
+                    <p>A browser does not remember anything from one request to another. So every time a user visits a
+                        page, nothing about any previous visits is remembered. Cookies can be used to store small pieces
+                        of information between requests using the document.cookie property. Cookies can only be read by
+                        a web page from the same domain that set them. This is to stop sites from being able to access
+                        information about users, such as other sites they have visited. Cookies are also limited to
+                        storing up to 4KB of data, although 20 cookies are allowed per domain, which can add up to quite
+                        a lot of data. Cookies take the form of a text file that contains a list of name/value pairs
+                        separated by semicolons.</p>
+                    <h4>Creating Cookies</h4>
+                    <p>To create a cookie, you assign it using the document.cookie property in JavaScript. The
+                        document.cookie property acts like a special type of string. Assigning another cookie to it
+                        won’t overwrite the entire property, it will just append it to the end of the string. Example:
+                    </p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=javascript&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=document.cookie%2520%253D%2520%27hero%253Dtrue%27%253B%250A%253C%253C%2520%2522hero%253Dtrue%2522%250A%250Adocument.cookie%2520%253D%2520%27city%253DMetropolis%27%253B%250A%253C%253C%2520%2522city%253DMetropolis%2522%250A&tb="
+                        style="width: 590px; height: 285px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                    <h4>Changing Cookies Values & Reading Cookies</h4>
+                    <p>A cookie’s value can be changed by reassigning it to document.cookie using the same name but a
+                        different value. Example:</p>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=javascript&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=document.cookie%2520%253D%2520%27name%253DBatman%27%250A%253C%253C%2520%2522name%253DBatman%2522%250A%250Adocument.cookie%2520%253D%2520%27city%253DGotham%27%250A%253C%253C%2520%2522city%253DGotham%2522%250A%250A%252F%252FTo%2520see%2520the%2520current%2520contents%2520of%2520the%2520cookie%2520jar%252C%2520simply%2520enter%2520document.cookie%253A%250A%250Adocument.cookie%253A%250A%253C%253C%2520%2522name%253DBatman%253B%2520hero%253Dtrue%253B%2520city%253DGotham%2522%250A&tb="
+                        style="width: 590px; height: 400px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                    <h4>Secure Cookies</h4>
+                    <p>Adding the string '; secure' to the end of a cookie will ensure it’s only transmitted over a
+                        secure HTTPS network: <code>document.cookie = 'name=Batman; secure';</code></p><br>
+                    <p>The window.setTimeout() method can be used to invoke a function after a set amount of time. It
+                        can be canceled using the clearTimeout() method. window.setTimeout( () => alert("Time's Up!"),
+                        3000);</p>
+                    <p>The window.setInterval() method can be used to repeatedly invoke a function. It can be stopped
+                        using the clearInterval() method. const summon = window.setInterval(chant,1000);</p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>The data-Attribute</h3>
+                    <p>The data- attribute is a way of embedding data in a web page using custom attributes that are
+                        ignored by the browser. They’re also private to a page, so are not intended to be used by an
+                        external service – their sole purpose is to be used by a JavaScript program. This means they’re
+                        perfect for adding data that can be used as a hook that the program utilizes to access
+                        information about a particular element on the page. The names of these attributes can be decided
+                        by the developer, but they must use the following format:
+                    <ul>
+                        <li>Start with data-.</li>
+                        <li>Contain only lowercase letters, numbers, hyphens, dots, colons or underscores.</li>
+                        <li>Include an optional string value.</li>
+                    </ul><br>
+                    Example in use: <br>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=htmlmixed&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=%253Cdiv%2520id%253D%27hero%27%2520data-powers%253D%27flight%2520superSpeed%27%253E%250ASuperman%250A%253C%252Fdiv%253E%250A&tb="
+                        style="width: 590px; height: 246px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe><br>
+                    The data-powers attribute can be accessed using the following code: <br>
+                    <iframe
+                        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=javascript&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=const%2520superman%2520%253D%2520document.getElementById%28%27hero%27%29%253B%250Aconst%2520powers%2520%253D%2520superman.dataset.powers%253B%250A%250A%253C%253C%2520%27flight%2520superSpeed%27%250A%250A%250A%252F%252F%2520OR%250Aconst%2520powers%2520%253D%2520superman.getAttribute%28%27data-powers%27%29%253B%250A&tb="
+                        style="width: 590px; height: 343px; border:0; transform: scale(1); overflow:hidden;">
+                    </iframe>
+                    </p>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>HTML5 APIs</h3>
+                    <p>The HTML5 specification contains several APIs that help to gain access to hardware, such as cameras, batteries, geolocation, and graphics card. Hardware evolves quickly, and APIs are frequently introduced to give developers access to and control new features that appear on the latest devices.</p>
+                    <h4>Geolocation</h4>
+                    <p>The Geolocation API allows you to access the geographic coordinates of the user’s device, as long as the user gives permission.</p>
+                </article>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>
