@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>WDD 330 | week 10 notes</title>
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+    </header>
+    <main>
+        <h2>Week 10 - Validating Forms & Using Fetch</h2>
+        <ul>
+            <li>
+                <article>
+                    <h3>Validating Forms Using JavaScript(API)</h3>
+                    <p>Using JavaScript constraint validating API set methods and properties on the form elements DOM
+                        interfaces.
+                        We can use JavaScript to set the following properties on the form elements DOM such as
+                        validationMessage, validity, willValidate.
+                    </p>
+                    <h4>Implementing a customized error message with the API</h4>
+                    <blockquote>
+                        We'll start with some simple HTML <br>
+                        <iframe
+                            src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=htmlmixed&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=%253Cform%253E%250A%2520%2520%253Clabel%2520for%253D%2522mail%2522%253E%250A%2520%2520%2520%2520I%2520would%2520like%2520you%2520to%2520provide%2520me%2520with%2520an%2520e-mail%2520address%253A%250A%2520%2520%253C%252Flabel%253E%250A%2520%2520%253Cinput%2520type%253D%2522email%2522%2520id%253D%2522mail%2522%2520name%253D%2522mail%2522%2520%252F%253E%250A%2520%2520%253Cbutton%253ESubmit%253C%252Fbutton%253E%250A%253C%252Fform%253E%250A&tb="
+                            style="width: 590px; height: 343px; border:0; transform: scale(1); overflow:hidden;">
+                        </iframe><br>
+                        Then add the following JavaScript to the page: <br>
+                        <iframe
+                            src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=javascript&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=const%2520email%2520%253D%2520document.getElementById%28%2522mail%2522%29%253B%250A%250Aemail.addEventListener%28%2522input%2522%252C%2520%28event%29%2520%253D%253E%2520%257B%250A%2520%2520if%2520%28email.validity.typeMismatch%29%2520%257B%250A%2520%2520%2520%2520email.setCustomValidity%28%2522I%2520am%2520expecting%2520an%2520e-mail%2520address%21%2522%29%253B%250A%2520%2520%2520%2520email.reportValidity%28%29%253B%250A%2520%2520%257D%2520else%2520%257B%250A%2520%2520%2520%2520email.setCustomValidity%28%2522%2522%29%253B%250A%2520%2520%257D%250A%257D%29%253B%250A&tb="
+                            style="width: 590px; height: 400px; border:0; transform: scale(1); overflow:hidden;">
+                        </iframe><br>
+                        Here we store a reference to the email input, then add an event listener to it that runs the
+                        contained code each time the value inside the input is changed. <br>
+
+                        Inside the contained code, we check whether the email input's validity.typeMismatch property
+                        returns
+                        true, meaning that the contained value doesn't match the pattern for a well-formed email
+                        address. If
+                        so, we call the setCustomValidity() method with a custom message which is displayed by calling
+                        reportValidity(). This renders the input invalid, so when you try to submit the form, the
+                        submission
+                        fails and the custom error message is displayed. <br>
+
+                        If the validity.typeMismatch property returns false, we call the setCustomValidity() method an
+                        empty
+                        string. This renders the input valid, so the form will submit.
+
+                    </blockquote>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <h3>Using the Fetch API</h3>
+                    <blockquote>
+                        <p>The Fetch API provides a JavaScript interface for accessing and manipulating parts of the
+                            protocol, such as requests and responses. It also provides a global fetch() method that
+                            provides an easy, logical way to fetch resources asynchronously across the network.</p>
+                        <p>This kind of functionality was previously achieved using XMLHttpRequest. Fetch provides a
+                            better alternative that can be easily used by other technologies such as Service Workers.
+                            Fetch also provides a single logical place to define other HTTP-related concepts such as
+                            CORS and extensions to HTTP.
+                            A basic fetch request is really simple to set up. Have a look at the following code:
+                            <br>
+                            <iframe
+                                src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=javascript&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=fetch%28%27http%253A%252F%252Fexample.com%252Fmovies.json%27%29%250A%2520%2520.then%28%28response%29%2520%253D%253E%2520response.json%28%29%29%250A%2520%2520.then%28%28data%29%2520%253D%253E%2520console.log%28data%29%29%253B%250A&tb="
+                                style="width: 590px; height: 246px; border:0; transform: scale(1); overflow:hidden;">
+                            </iframe>
+                        </p>
+                        <p>Here we are fetching a JSON file across the network and printing it to the console. The
+                            simplest use of fetch() takes one argument — the path to the resource you want to fetch —
+                            and does not directly return the JSON response body but instead returns a promise that
+                            resolves with a Response object.</p>
+                        <p>The Response object, in turn, does not directly contain the actual JSON response body but is
+                            instead a representation of the entire HTTP response. So, to extract the JSON body content
+                            from the Response object, we use the json() method, which returns a second promise that
+                            resolves with the result of parsing the response body text as JSON.</p>
+                    </blockquote>
+                    <h4>Supplying request options</h4>
+                    <blockquote>
+                        The fetch() method can optionally accept a second parameter, an init object that allows you to
+                        control a number of different settings: <br>
+                        <iframe
+                            src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=seti&wt=none&l=javascript&width=590&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14.5px&lh=133%25&si=false&es=2x&wm=false&code=%252F%252F%2520Example%2520POST%2520method%2520implementation%253A%250Aasync%2520function%2520postData%28url%2520%253D%2520%27%27%252C%2520data%2520%253D%2520%257B%257D%29%2520%257B%250A%2520%2520%252F%252F%2520Default%2520options%2520are%2520marked%2520with%2520*%250A%2520%2520const%2520response%2520%253D%2520await%2520fetch%28url%252C%2520%257B%250A%2520%2520%2520%2520method%253A%2520%27POST%27%252C%2520%252F%252F%2520*GET%252C%2520POST%252C%2520PUT%252C%2520DELETE%252C%2520etc.%250A%2520%2520%2520%2520mode%253A%2520%27cors%27%252C%2520%252F%252F%2520no-cors%252C%2520*cors%252C%2520same-origin%250A%2520%2520%2520%2520cache%253A%2520%27no-cache%27%252C%2520%252F%252F%2520*default%252C%2520no-cache%252C%2520reload%252C%2520force-cache%252C%2520only-if-cached%250A%2520%2520%2520%2520credentials%253A%2520%27same-origin%27%252C%2520%252F%252F%2520include%252C%2520*same-origin%252C%2520omit%250A%2520%2520%2520%2520headers%253A%2520%257B%250A%2520%2520%2520%2520%2520%2520%27Content-Type%27%253A%2520%27application%252Fjson%27%250A%2520%2520%2520%2520%2520%2520%252F%252F%2520%27Content-Type%27%253A%2520%27application%252Fx-www-form-urlencoded%27%252C%250A%2520%2520%2520%2520%257D%252C%250A%2520%2520%2520%2520redirect%253A%2520%27follow%27%252C%2520%252F%252F%2520manual%252C%2520*follow%252C%2520error%250A%2520%2520%2520%2520referrerPolicy%253A%2520%27no-referrer%27%252C%2520%252F%252F%2520no-referrer%252C%2520*no-referrer-when-downgrade%252C%2520origin%252C%2520origin-when-cross-origin%252C%2520same-origin%252C%2520strict-origin%252C%2520strict-origin-when-cross-origin%252C%2520unsafe-url%250A%2520%2520%2520%2520body%253A%2520JSON.stringify%28data%29%2520%252F%252F%2520body%2520data%2520type%2520must%2520match%2520%2522Content-Type%2522%2520header%250A%2520%2520%257D%29%253B%250A%2520%2520return%2520response.json%28%29%253B%2520%252F%252F%2520parses%2520JSON%2520response%2520into%2520native%2520JavaScript%2520objects%250A%257D%250A%250ApostData%28%27https%253A%252F%252Fexample.com%252Fanswer%27%252C%2520%257B%2520answer%253A%252042%2520%257D%29%250A%2520%2520.then%28%28data%29%2520%253D%253E%2520%257B%250A%2520%2520%2520%2520console.log%28data%29%253B%2520%252F%252F%2520JSON%2520data%2520parsed%2520by%2520%2560data.json%28%29%2560%2520call%250A%2520%2520%257D%29%253B%250A&tb="
+                            style="width: 590px; height: 825px; border:0; transform: scale(1); overflow:hidden;">
+                        </iframe>
+                    </blockquote>
+                </article>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>
